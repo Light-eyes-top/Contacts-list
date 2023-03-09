@@ -1,0 +1,26 @@
+syntax = "proto3";
+package handler_gRPC;
+option go_package = "pb/";
+
+message Contact{
+  int64 id = 1;
+  string Fio = 2;
+  string Email = 3;
+  string Phone = 4;
+}
+
+message Id{
+  int64 id = 1;
+}
+
+message UpdateRequest {
+  int64 id = 1;
+  Contact contact = 2;
+}
+
+service ContactService{
+  rpc Create(Contact) returns (Id);
+  rpc Get(Id) returns (Contact);
+  rpc Update(UpdateRequest) returns (Contact);
+  rpc Delete(Id) returns (Id);
+}

@@ -1,0 +1,19 @@
+server:
+  portREST: "8000"
+  portGRPC: "8080"
+
+saveType: "postgres"
+
+postgres:
+  user: postgres
+  port: 5432
+  password: postgres
+  host: localhost
+  dbname: postgres
+  sslmode: disable
+
+rabbitMQ:
+  host: "localhost"
+  port: "5672"
+  user: "guest"
+  password: "guest"
